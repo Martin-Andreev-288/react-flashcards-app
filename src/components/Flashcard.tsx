@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { type Flashcard as FlashcardType } from "../types";
 
 function minutesToMs(n: number) {

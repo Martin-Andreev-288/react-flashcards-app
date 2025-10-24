@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import "./index.css";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { type Flashcard as FlashcardType } from "./types.ts";
@@ -8,7 +8,7 @@ import { uid } from "./utils.ts";
 
 const DEMO_MODE = true; // set to false to switch intervals to days instead of minutes
 
-export default function App(): JSX.Element {
+export default function App() {
   const [cards, setCards] = useLocalStorage<FlashcardType[]>(
     "flashcards_v1",
     []

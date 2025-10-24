@@ -5,10 +5,10 @@ export function useLocalStorage<T>(key: string, initial: T | (() => T)) {
         try {
             const raw = localStorage.getItem(key);
             if (raw) return JSON.parse(raw) as T;
-            return typeof initial === "function" ? (initial as any)() : initial;
+            return typeof initial === "function" ? (initial as () => T)() : initial;
         } catch (e) {
             console.error("reading localStorage failed", e);
-            return typeof initial === "function" ? (initial as any)() : initial;
+            return typeof initial === "function" ? (initial as () => T)() : initial;
         }
     });
 
